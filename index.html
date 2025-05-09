@@ -5,12 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¡Invítame un café!</title>
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+
     body {
       font-family: sans-serif;
       text-align: center;
       padding: 2rem;
-      background-color: #f9f9f9;
+      background-color: white;
+      color: black;
     }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+      }
+    }
+
     input, button {
       padding: 0.5rem;
       font-size: 1rem;
