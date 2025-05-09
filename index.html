@@ -53,7 +53,7 @@
 
   <div class="link-container" id="linkContainer" style="display: none;">
     <p>Este es tu enlace personalizado:</p>
-    <a id="paypalLink" class="paypal-link" target="_blank">Abrir enlace</a>
+    <a id="paypalLink" class="paypal-link" target="_blank">Ir a la plataforma de pago</a>
   </div>
 
   <script>
@@ -67,7 +67,6 @@
       const enlace = `https://www.paypal.me/LoRDBuBaKo/3.10?note=${nota}`;
       const paypalLink = document.getElementById('paypalLink');
       paypalLink.href = enlace;
-      paypalLink.textContent = enlace;
       document.getElementById('linkContainer').style.display = 'block';
     }
   </script>
