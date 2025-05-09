@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Invítame un café!</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    .link-container {
+      margin-top: 1rem;
+    }
+    .paypal-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: white;
+      background-color: #0070ba;
+      padding: 0.7rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>☕ ¡Invítame un café!</h1>
+  <p>Introduce tu nombre de usuario de Discord para generar un enlace personalizado.</p>
+
+  <input type="text" id="discordUser" placeholder="Tu usuario de Discord" />
+  <button onclick="generarEnlace()">Generar enlace</button>
+
+  <div class="link-container" id="linkContainer" style="display: none;">
+    <p>Este es tu enlace personalizado:</p>
+    <a id="paypalLink" class="paypal-link" target="_blank">Abrir enlace</a>
+  </div>
+
+  <script>
+    function generarEnlace() {
+      const user = document.getElementById('discordUser').value.trim();
+      if (!user) {
+        alert('Por favor, escribe tu nombre de usuario de Discord.');
+        return;
+      }
+      const nota = encodeURIComponent(`Soy ${user}, te invito un señor café de 3,10 € del Good News.`);
+      const enlace = `https://www.paypal.me/LoRDBuBaKo/3.10?note=${nota}`;
+      const paypalLink = document.getElementById('paypalLink');
+      paypalLink.href = enlace;
+      paypalLink.textContent = enlace;
+      document.getElementById('linkContainer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
